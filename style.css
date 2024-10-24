@@ -5,8 +5,16 @@
     font-family: 'Inter', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
-    --color-primary: #ff7c1e;
+    --color-orange: #ff7c1e;
+    --color-white-primary: white;
+    --color-white-secondary: whitesmoke;
+    --color-black-primary: black;
+    --color-gray: gray;
 }
 
 .page-max-width {
@@ -26,7 +34,7 @@ input {
 }
 
 .searchbar {
-    border: 1px solid black;
+    border: 1px solid var(--color-black-primary);
     padding: 0.3rem 1rem;
     border-radius: 6px;
 }
@@ -36,18 +44,32 @@ button {
     padding: 0.5rem 1rem;
     border-radius: 6px;
     width: max-content;
+    cursor: pointer;
 }
 
 button.button-primary {
-    background: black;
-    color: white;
+    background: var(--color-black-primary);
+    color: var(--color-white-primary);
+}
+
+select {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--color-white-secondary);
+}
+
+select option {
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    background-color: white;
 }
 
 button.button-secondary {
-    background: whitesmoke;
+    background: var(--color-white-secondary);
 }
 
-#logo {
+.logo {
     font-weight: 600;
 }
 
@@ -62,6 +84,15 @@ button.button-secondary {
     display: flex;
     align-items: center;
     gap: 2rem;
+}
+
+.navbar nav a {
+    color: var(--color-gray);
+    transition: all 0.3s ease-in;
+}
+
+.navbar nav a:hover {
+    color: var(--color-black-primary);
 }
 
 .navbar nav .cart {
@@ -88,7 +119,7 @@ button.button-secondary {
 }
 
 #hero .hero-content .price p:nth-child(2) {
-    color: var(--color-primary);
+    color: var(--color-orange);
     font-size: 1.8rem;
 }
 
@@ -96,8 +127,7 @@ button.button-secondary {
     height: 100%;
     display: flex;
     align-items: center;
-    background-color: white;
-    
+    background-color: var(--color-white-primary);
 }
 
 #hero img {
@@ -110,13 +140,99 @@ button.button-secondary {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-block: 3rem;
+    margin-block: 5rem;
 }
 
 #products .product-nav {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+#products .list-product {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+#products .product-item {
+    background-color: var(--color-white-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.product-item figure {
+    background-color: var(--color-white-secondary);
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-position: center;
+    aspect-ratio: 1/1;
+}
+
+.product-item figure .like {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    background-color: var(--color-white-secondary);
+}
+
+.product-item .details {
+    padding: 1rem;
+}
+
+.product-item .details > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+footer .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#footer {
+    padding-block: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div .contact div a i {
+    font-size: 1.5rem;
+    background-color: var(--color-white-secondary);
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+footer div > p {
+    color: var(--color-gray);
+}
+
+footer div .contact div {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.footer-nav a {
+    color: var(--color-gray);
+    transition: all 0.3s ease-in;
+}
+
+.footer-nav a:hover {
+    color: var(--color-black-primary);  
 }
 
 @media screen and (max-width: 1000px) {
@@ -143,6 +259,10 @@ button.button-secondary {
     #hero img {
         width: 100%;
     }
+
+    #products .list-product {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media screen and (max-width: 678px) {
@@ -158,4 +278,15 @@ button.button-secondary {
         font-size: 2rem;
     }
 
+    #products .list-product {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer .footer-nav  {
+        margin-top: 2rem;
+    }
 }
