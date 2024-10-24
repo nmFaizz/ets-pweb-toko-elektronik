@@ -118,6 +118,10 @@ button.button-secondary {
     gap: 1rem;
 }
 
+#hero .hero-content button {
+    margin-top: 2rem;
+}
+
 #hero .hero-content .price p:nth-child(2) {
     color: var(--color-orange);
     font-size: 1.8rem;
@@ -188,6 +192,10 @@ button.button-secondary {
 
 .product-item .details {
     padding: 1rem;
+}
+
+.product-item .details div .price {
+    color: var(--color-orange);
 }
 
 .product-item .details > div {
