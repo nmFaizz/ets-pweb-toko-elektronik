@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --color-primary: #ff7c1e;
+}
+
+.page-max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+.searchbar {
+    border: 1px solid black;
+    padding: 0.3rem 1rem;
+    border-radius: 6px;
+}
+
+button {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    width: max-content;
+}
+
+button.button-primary {
+    background: black;
+    color: white;
+}
+
+button.button-secondary {
+    background: whitesmoke;
+}
+
+#logo {
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar nav .cart {
+    font-size: 1.5rem;
+}
+
+#hero {
+    border-radius: 6px;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+}
+
+#hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#hero .hero-content .price p:nth-child(2) {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+}
+
+#hero .hero-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    
+}
+
+#hero img {
+    border-radius: 12px;
+    width: 50%;
+
+}
+
+#products {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-block: 3rem;
+}
+
+#products .product-nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar nav > a {
+        display: none;
+    }
+
+    #hero {
+        flex-direction: column;
+        gap: 2rem;
+        height: auto;
+    }
+
+    #hero .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+
+
+    #hero .hero-left {
+        
+    }
+
+    #hero img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 678px) {
+    .navbar nav .searchbar {
+        display: none;
+    }
+
+    .navbar #logo {
+        font-size: 1.5rem;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+}
